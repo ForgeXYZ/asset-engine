@@ -32,7 +32,7 @@ The `PipeContext` class is the main entry point for this package. Give the `get_
     ::get_path(formula="pipe_base_dir", *args, **kwargs)
 
     Evaluate a formula and return a path
-    :param formula:
+    :param formula: pipeline base directory (defaults to /home/user/pipeline)
     :param args: positional arguments, e.g. parent_formula
     :param kwargs: keyword_arguments to pass to PipeContext
     :return: path
@@ -65,7 +65,7 @@ PipeContext also has built-in context-manager functionality. It will store, reme
     class PipeContext(AbstractContextManager):
             def __enter__(self):
             """
-            Upon entering the PipeContext Manager, current context is assigned to the platform specific base drive
+            Upon entering the PipeContext Manager, current context is set to the platform specific base drive
             """
             self.context = self.drive
             pass
@@ -73,7 +73,6 @@ PipeContext also has built-in context-manager functionality. It will store, reme
         def __exit__(self, exc_type, exc_value, traceback):
             """
             Upon exiting the PipeContext Manager, current context is set to the most recently cached context
-            :return:
             """
             self.old_context.pop()
             pass

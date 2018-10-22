@@ -33,7 +33,7 @@
             - Evaluates each path, while subsequently updating a shared context pointer.
 
 
-    NOTE: CHANGE $PIPE_BASE_DIR = '/home/lvxejay/pipeline/' to a path that exists on 
+    NOTE: CHANGE $PIPE_BASE_DIR = '/home/user/pipeline/' to a path that exists on 
     your system 
 
 """
@@ -43,7 +43,7 @@
 import unittest, os
 from pipe_utils import IO, bcolors
 from pipe_context import PipeContext as PC
-pipe_base_dir = '/home/jmw/pipeline'
+pipe_base_dir = '/home/user/pipeline'
 # ----------------------------------------------------------------------------#
 # --------------------------------------------------------------- FUNCTIONS --#
 class PipeContextTest(unittest.TestCase):
