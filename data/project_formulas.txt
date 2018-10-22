@@ -1,0 +1,66 @@
+# Valid 'root' disk types are: config, and work.
+# Unused 'root' disk types: code, render, store
+
+# Valid keys for use as variable in any of the formulas are:
+#   drive, disk_type, project, sequence, shot, asset, asset_type, episode
+#   assembly, discipline, work_area, version, wa_version *NOT USED
+
+# 'drive' refers to the user's home directory or letter drive of the pipeline/project roots
+
+# ---------------------------------------------------------------------------------------------
+# Example Pipeline
+
+#   root
+#   ├── mdl
+#   ├── mtlx
+#   ├── projects
+#   │   ├── avengers
+#   │   │   └── props
+#   │   │       └── cube.blend
+#   │   └── test_project
+#   │       ├── architecture
+#   │       │   └── test_asset
+#   │       └── characters
+#   └── substance
+
+# ---------------------------------------------------------------------------------------------
+
+# Main Formulas 
+pr_base_dir = ('{pipe_pr_dir}', '{project}')
+
+# ---------------------------------------------------------------------------------------------
+
+# Asset Forumlas
+pr_as_dir = ('{pr_base_dir}', 'assets')
+pr_as_type_dir = ('{pr_as_dir}', '{asset_type}')
+
+# Note: Valid 'asset_type' keys are: architecture, characters, foliage, massive, props, vehicles
+# Additional formulas in ./asset_formulas.txt
+
+# ---------------------------------------------------------------------------------------------
+
+# Custom Formulas
+pr_data_dir = ('{pr_base_dir}', '.data')
+
+# ---------------------------------------------------------------------------------------------
+
+# Utility Formulas
+pr_pipe_form = ('{pipe_base_dir}', 'pipeline_formulas.txt')
+pr_project_form = ('{pr_data_dir}', 'project_formulas.txt')
+pr_asset_form = ('{pr_data_dir}', 'asset_formulas.txt')
+pr_thumb_dir = ('{pr_data_dir}', 'thumbnails')
+pr_thumb_file = ('{pr_thumb_dir}', '{project}.jpg' )
+
+# ---------------------------------------------------------------------------------------------
+
+# DNA Forumlas --- Some XML/DNA files on disk
+pr_project_dna = ('{pr_data_dir}', 'project.dna')
+pr_asset_dna = ('{pr_data_dir}', 'asset.dna')
+
+
+# ---------------------------------------------------------------------------------------------
+# Reference list for the formulas needed to initialize a project.
+# BASE_FORMULAS = ['pr_base_dir', 'pr_base_proj_dir',
+# 'pr_as_dir', 'pr_data_dir', 'pr_epi_dir', 'pr_rsrc_dir', 'pr_config_dir',
+# 'as_act_dir', 'as_char_dir', 'as_prop_dir', 'as_set_dir', 'pr_addon_dir']
+# ---------------------------------------------------------------------------------------------
