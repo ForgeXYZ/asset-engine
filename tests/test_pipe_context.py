@@ -43,7 +43,7 @@
 import unittest, os
 from pipe_utils import IO, bcolors
 from pipe_context import PipeContext as PC
-pipe_base_dir = '/home/user/pipeline'
+pipe_base_dir = os.path.join('home', 'user', 'pipeline')
 # ----------------------------------------------------------------------------#
 # --------------------------------------------------------------- FUNCTIONS --#
 class PipeContextTest(unittest.TestCase):
