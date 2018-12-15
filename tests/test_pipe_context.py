@@ -88,7 +88,7 @@ class PipeContextTest(unittest.TestCase):
     def test_multi_path(self):
         IO.info("TEST ---| Multi Path")
 
-        path_list = ['pipe_base_dir', 'pipe_mtlx_dir', 'as_tex_dir']
+        path_list = ['pipe_base_dir', 'pipe_lib_mtlx', 'as_tex_dir']
         path = PC.get_path(
             path_list, 'pr_as_type_dir', 'as_geo_dir',
             drive=pipe_base_dir, project='Interstellar',

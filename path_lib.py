@@ -43,11 +43,11 @@ class FormulaManager(object):
         self.formula_disk = None
         self.formulas = []
         self.file_location = os.path.normpath(os.path.realpath(__file__)
-                                              + '/../data/pipeline_formulas.txt')
+                                              + '/../data/pipeline_formulas.cfg')
         self.project_file = os.path.normpath(os.path.realpath(__file__)
-                                             + '/../data/project_formulas.txt')
+                                             + '/../data/project_formulas.cfg')
         self.asset_file = os.path.normpath(os.path.realpath(__file__)
-                                           + '/../data/asset_formulas.txt')
+                                           + '/../data/asset_formulas.cfg')
                                            
     def get_formula(self, formula=None):
         """Get a particular formula path by reading the associated formulas from disk"""
