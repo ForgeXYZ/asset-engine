@@ -97,9 +97,27 @@ class PipeContext(AbstractContextManager):
             self.old_context.pop()
         return self.context
 
+
+    def __str__(self):
+        pass
+
+
+    def __repr__(self):
+        pass
+
+
+    # def __eq__(self):
+        # pass
+
+
+    # def __hash__(self):
+    #     return hash((self.context))
+
+
     def context_init(self):
         if not self.context and self.drive is not None:
                 self.context = self.drive
+
 
     @classmethod
     def get_path(cls, formula="pipe_base_dir", *args, **kwargs) -> str or list:

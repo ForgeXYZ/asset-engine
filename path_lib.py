@@ -43,11 +43,11 @@ class FormulaManager(object):
         self.formula_disk = None
         self.formulas = []
         self.file_location = os.path.normpath(os.path.realpath(__file__)
-                                              + '/../data/pipeline_formulas.cfg')
+                                              + '/../data/formulas/pipeline_formulas.cfg')
         self.project_file = os.path.normpath(os.path.realpath(__file__)
-                                             + '/../data/project_formulas.cfg')
+                                             + '/../data/formulas/project_formulas.cfg')
         self.asset_file = os.path.normpath(os.path.realpath(__file__)
-                                           + '/../data/asset_formulas.cfg')
+                                           + '/../data/formulas/asset_formulas.cfg')
                                            
     def get_formula(self, formula=None):
         """Get a particular formula path by reading the associated formulas from disk"""
@@ -76,6 +76,12 @@ class FormulaManager(object):
 
     def read_formulas(self, formula=None):
         """Conditionally reads formula configuration files based on a passed in formula value"""
+
+        class Formula:
+            
+            pass
+
+
         def _read(file_location=self.file_location):
             keep = []
             with open(file_location, 'r') as fh:

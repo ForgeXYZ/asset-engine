@@ -12,7 +12,7 @@
     This module contains enums for the OS/Platform, Rigs, and Disciplines
 
 :description:
-    
+    TODO: Add Descriptor design pattern -> https://rszalski.github.io/magicmethods/#descriptor
 
 """
 
